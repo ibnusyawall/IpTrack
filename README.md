@@ -13,3 +13,8 @@ Simply Track Ip
 5. cd IpTrack
 6. node find
 </pre>
+
+note : untuk ip ganti pada file ' ip.json '
+<pre>
+nano ip.json
+</pre>
