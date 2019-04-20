@@ -1,15 +1,44 @@
 /* Created By Ibnu Syawal */
 /* Say Alhamdulillah :) */
 
-// Modul
-var req = require('request');              // npm install --save request
-var ip = require('./ip.json');             // atur ip target disini
-var warna = require('./style/warna.js');  // npm install --save colors
-var pala = require('./style/pala.js');    // bagian head
+// Module
 
-// Bagaikan Langit Dan Bumi
+var req = require('request' );         // npm install --save request
+var bac = require('readline');         // npm install --save readline
+var warna = require('colors');         // npm install --save colors
+
 /* ........................................ */
-req("http://api.ipstack.com/" + ip.ip +  "?access_key=" + ip.key, function (error, response, body){
+warna.setTheme({
+    hijau : 'green',
+    biru : 'blue',
+    merah : 'red',
+    kuning : 'yellow'
+});
+
+const tanya = bac.createInterface({input: process.stdin, output: process.stdout});
+
+/* ........................................ */
+
+key = ["2388107e74e7fe5424554967771b568b","7a1afbf9b63efdf5bdb30a08a736673c229b3ea738e667e0d259c135"]
+
+/* ........................................ */
+console.log(" _        __        _ ".merah)
+console.log("|_|___   |  |   ___| |_ _ _ ___ ".merah)
+console.log("| | . |  |  |__| . | '_| | | . | ".merah)
+console.log("|_|  _|  |_____|___|_,_|___|  _| ")
+console.log("  |_|                      |_| ")
+console.log("        C" + " : " + "I".merah + "bnu " + "S".merah + "yawall")
+console.log("      407 Authentic Exploit")
+console.log("")
+console.log("=====================================")
+console.log('');
+/* ........................................ */
+
+console.log(''); tanya.question('[!] Masukan alamat ip : ', (iplu) => {
+
+/* ........................................ */
+
+req("http://api.ipstack.com/" + `${iplu}` +  "?access_key=" + key[0], function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
         console.log("[".hijau + "!".merah + "]".hijau + "  Tipe Ip            : " + ip["type"])
@@ -26,8 +55,10 @@ req("http://api.ipstack.com/" + ip.ip +  "?access_key=" + ip.key, function (erro
         console.log("Galat, coba lagi !")
     }
 })
-// Aku Dan Engkau Selamanya Takan Pernah
-req("http://ip-api.com/json/" + ip.ip + "?fields=mobile", function (error, response, body){
+
+/* ........................................ */
+
+req("http://ip-api.com/json/" + `${iplu}` + "?fields=mobile", function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
         console.log("[".hijau + "!".merah + "]".hijau + "  Perangkat Mobile   : " + ip["mobile"])
@@ -37,8 +68,10 @@ req("http://ip-api.com/json/" + ip.ip + "?fields=mobile", function (error, respo
         console.log("Galat, coba lagi !")
     }
 })
-// Bisa Kan-Bersama, Sadar Ku Siapa
-req("http://free.ipwhois.io/json/" + ip.ip, function (error, response, body){
+
+/* ........................................ */
+
+req("http://free.ipwhois.io/json/" + `${iplu}`, function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
         console.log("[".hijau + "!".merah + "]".hijau + "  Zona Waktu         : " + ip["timezone"])
@@ -55,8 +88,10 @@ req("http://free.ipwhois.io/json/" + ip.ip, function (error, response, body){
         console.log("Galat, coba lagi !")
     }
 })
-// Ikhlaskan Sudah Aku Iklash kan
-req("https://api.ipdata.co/" + ip.ip +"?api-key=" + ip.keys, function (error, response, body){
+
+/* ........................................ */
+
+req("https://api.ipdata.co/" + `${iplu}` +"?api-key=" + key[1], function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
         console.log("[".hijau + "!".merah + "]".hijau + "  Zona Waktu Bagian  : " + ip["time_zone"]["abbr"])
@@ -70,5 +105,6 @@ req("https://api.ipdata.co/" + ip.ip +"?api-key=" + ip.keys, function (error, re
         console.log("Galat, coba lagi !")
     }
 })
+}); tanya.close();
+
 /* ........................................ */
-// Don't Cry :)
