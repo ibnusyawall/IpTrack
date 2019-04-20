@@ -104,7 +104,7 @@ req("https://api.ipdata.co/" + `${iplu}` +"?api-key=" + key[1], function (error,
     }else{
         console.log("Galat, coba lagi !")
     }
-})
 }); tanya.close();
+}); //tanya.close();
 
 /* ........................................ */
