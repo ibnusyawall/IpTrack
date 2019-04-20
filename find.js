@@ -35,8 +35,7 @@ console.log('');
 /* ........................................ */
 
 console.log(''); tanya.question('[!] Masukan alamat ip : ', (iplu) => {
-console.log('');
-    
+
 /* ........................................ */
 
 req("http://api.ipstack.com/" + `${iplu}` +  "?access_key=" + key[0], function (error, response, body){
