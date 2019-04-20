@@ -14,7 +14,7 @@ Simply Track Ip
 6. node find
 </pre>
 
-## Run this toold
+## Run this tools
 
 <pre>
 node find
