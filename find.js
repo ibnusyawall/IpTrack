@@ -35,13 +35,13 @@ console.log('');
 /* ........................................ */
 
 console.log(''); tanya.question('[!] Masukan alamat ip : ', (iplu) => {
-
+console.log('');
+    
 /* ........................................ */
 
 req("http://api.ipstack.com/" + `${iplu}` +  "?access_key=" + key[0], function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
-        console.log('');
         console.log("[".hijau + "!".merah + "]".hijau + "  Tipe Ip            : " + ip["type"])
         console.log("[".hijau + "!".merah + "]".hijau + "  Negara             : " + ip["country_name"])
         console.log("[".hijau + "!".merah + "]".hijau + "  Kode Negara        : " + ip["country_code"])
@@ -106,6 +106,6 @@ req("https://api.ipdata.co/" + `${iplu}` +"?api-key=" + key[1], function (error,
         console.log("Galat, coba lagi !")
     }
 }); tanya.close();
-}); //tanya.close();
+}); 
 
 /* ........................................ */
