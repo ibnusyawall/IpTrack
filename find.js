@@ -9,9 +9,9 @@ var warna = require('colors');         // npm install --save colors
 
 /* ........................................ */
 warna.setTheme({
-    hijau : 'green',
-    biru : 'blue',
-    merah : 'red',
+    hijau  : 'green',
+    biru   : 'blue',
+    merah  : 'red',
     kuning : 'yellow'
 });
 
@@ -41,6 +41,7 @@ console.log(''); tanya.question('[!] Masukan alamat ip : ', (iplu) => {
 req("http://api.ipstack.com/" + `${iplu}` +  "?access_key=" + key[0], function (error, response, body){
     ip = JSON.parse(body)
     if(response.statusCode == 200) {
+        console.log('');
         console.log("[".hijau + "!".merah + "]".hijau + "  Tipe Ip            : " + ip["type"])
         console.log("[".hijau + "!".merah + "]".hijau + "  Negara             : " + ip["country_name"])
         console.log("[".hijau + "!".merah + "]".hijau + "  Kode Negara        : " + ip["country_code"])
