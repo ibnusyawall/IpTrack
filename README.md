@@ -4,17 +4,18 @@ Simply Track Ip
 
 ![alt text](https://github.com/ibnusyawall/IpTrack/blob/master/logo.png)
 
-## install
+## Install on Termux
+
 <pre>
-1. pkg install nodejs
-2. pkg install git && nano
-3. npm install --save request colors
+1. pkg install nodejs git nano
+2. npm install --save request colors readline
 4. git clone https://github.com/ibnusyawall/IpTrack
 5. cd IpTrack
 6. node find
 </pre>
 
-note : untuk ip ganti pada file ' ip.json '
+## Run this toold
+
 <pre>
-nano ip.json
+node find
 </pre>
